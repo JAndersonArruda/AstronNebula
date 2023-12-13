@@ -1,6 +1,6 @@
 import express from "express";
 import router from "./routes/index.js";
-import startDrawing from "./src/utils/start.js";
+import startDrawing from "./src/util/start.js";
 
 const app = express();
 const port = 2900;
