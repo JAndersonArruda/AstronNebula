@@ -7,32 +7,32 @@ const router = Router();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-router.use(expressStatic(join(__dirname, '..', 'src', 'apps', 'templates')));
+router.use(expressStatic(join(__dirname, '..', 'src', 'app', 'templates')));
 router.use(expressStatic(join(__dirname, '..', 'public')));
 
 
 router.get("/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'apps', 'templates', 'base.html'));
+    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'base.html'));
 });
 
 router.get("/signup/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'apps', 'templates', 'signUp.html'));
+    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'signUp.html'));
 });
 
 router.get("/signin/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'apps', 'templates', 'signIn.html'));
+    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'signIn.html'));
 });
 
 router.get("/calendary/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'apps', 'templates', 'calendary.html'));
+    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'calendary.html'));
 });
 
 router.get("/galery/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'apps', 'templates', 'galery.html'));
+    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'galery.html'));
 });
 
 router.get("/about/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'apps', 'templates', 'about.html'));
+    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'about.html'));
 });
 
 export default router;
