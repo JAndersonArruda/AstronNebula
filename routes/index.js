@@ -23,13 +23,14 @@ router.get("/signin/", (req, res) => {
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'signIn.html'));
 });
 
-router.get("/calendary/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'calendary.html'));
-});
-
 router.get("/galery/", (req, res) => {
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'galery.html'));
 });
+
+router.get("/profile/", (req, res) => {
+    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'profile.html'));
+});
+
 
 router.get("/about/", (req, res) => {
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'about.html'));
