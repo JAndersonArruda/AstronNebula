@@ -1,0 +1,26 @@
+{
+  "name": "astronnebula",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAndersonArruda/AstronNebula.git"
+  },
+  "keywords": [
+    "292104"
+  ],
+  "author": "Jose Arruda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JAndersonArruda/AstronNebula/issues"
+  },
+  "homepage": "https://github.com/JAndersonArruda/AstronNebula#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
