@@ -35,7 +35,6 @@ router.get("/profile/", (req, res) => {
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'profile.html'));
 });
 
-
 router.get("/about/", (req, res) => {
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'about.html'));
 });
