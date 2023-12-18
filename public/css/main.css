@@ -49,7 +49,7 @@ section {
 .container-description-image {
     display: flex;
     flex-direction: column;
-    padding-left: 2.5rem;
+    padding-left: 2rem;
 }
 
 .container-description-image p {

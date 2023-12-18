@@ -13,23 +13,32 @@ app.use((req, res, next) => {
 });
 
 app.get('/api/apod', async (req, res) => {
-  const apiKey = 'lSDf73qkUxwQr3rh9DE2nvWOhzErD6OUggMSzasP';
-  const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+    const apiKey = 'lSDf73qkUxwQr3rh9DE2nvWOhzErD6OUggMSzasP';
+    const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    res.json(data);
-  }  catch (error) {
-    console.error('Erro na solicitação à API da NASA:', error);
+    try {
+        const response = await fetch(apiUrl);
 
-    res.status(500).json({
-      error: 'Erro interno no servidor',
-      details: error.message // Adicionando detalhes do erro à resposta JSON
-    });
-  }
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Erro na solicitação à API da NASA:', errorData);
+            res.status(response.status).json(errorData);
+            return;
+        }
+
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Erro interno no servidor:', error);
+
+        res.status(500).json({
+            error: 'Erro interno no servidor',
+            details: error.message
+        });
+    }
 });
 
+
 app.listen(PORT, () => {
-  console.log(`Servidor em execução na porta ${PORT}`);
+    console.log(`Servidor em execução na porta ${PORT}`);
 });
