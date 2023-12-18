@@ -1,6 +1,9 @@
 header {
     background-color: #000;
     font-family: cursive;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .nav {
