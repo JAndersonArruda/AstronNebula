@@ -33,9 +33,9 @@ section {
 }
 
 .image-day img {
-    width: auto;
+    width: 100%;
     height: auto;
-    border-radius: .5rem;
+    border-radius: .2rem;
 }
 
 .image-day p {
