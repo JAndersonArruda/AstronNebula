@@ -5,11 +5,22 @@ section {
     min-height: 89vh;
 }
 
+.title-section {
+    font-family: cursive;
+    font-weight: 600;
+    color: #5afcf4;
+    border-bottom: .1rem solid #5afcf4;
+    width: 100%;
+    text-align: center;
+    padding-bottom: .3rem;
+}
+
+
+/* Image day */
 .container-image-day {
     display: grid;
     grid-template-columns: 25vw auto;
     align-items: center;
-    justify-content: space-around;
 }
 
 .image-day {
@@ -56,3 +67,18 @@ section {
     text-align: justify;
 }
 
+
+/* Calendar */
+.container-calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-calendar-data {
+    font-size: 30px;
+    font-weight: 300;
+    color: #5afcf4;
+    padding-top: 10rem;
+}
