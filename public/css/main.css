@@ -50,16 +50,6 @@ section {
     padding-left: 2.5rem;
 }
 
-.container-description-image h1 {
-    font-family: cursive;
-    font-weight: 600;
-    color: #5afcf4;
-    border-bottom: .1rem solid #5afcf4;
-    width: 100%;
-    text-align: center;
-    padding-bottom: .3rem;
-}
-
 .container-description-image p {
     margin: 1rem 2rem 0; 
     line-height: 1.8;
