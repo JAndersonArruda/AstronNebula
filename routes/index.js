@@ -27,10 +27,6 @@ router.get("/galery/", (req, res) => {
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'galery.html'));
 });
 
-router.get("/agenda/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'agenda.html'));
-});
-
 router.get("/profile/", (req, res) => {
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'profile.html'));
 });
