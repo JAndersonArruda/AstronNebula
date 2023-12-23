@@ -1,12 +1,11 @@
-// index.js
-import riqueriImgeAPI from "./api.js";
+import { fetchApod }  from "./api.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const imageDay = document.querySelector(".image-day");
     const descriptionImageDay = document.querySelector(".container-description-image");
 
     try {
-        const date = await riqueriImgeAPI();
+        const date = await fetchApod();
 
         const image = document.createElement("img");
         image.src = date.url;
