@@ -27,8 +27,8 @@ router.get("/signin/", (req, res) => {
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'signIn.html'));
 });
 
-router.get("/galery/", (req, res) => {
-    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'galery.html'));
+router.get("/gallery/", (req, res) => {
+    res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'gallery.html'));
 });
 
 router.get("/profile/", (req, res) => {
