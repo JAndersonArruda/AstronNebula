@@ -25,6 +25,10 @@ section {
     align-items: center;
 }
 
+.title-section-image-day {
+    display: none;
+}
+
 .image-day {
     display: flex;
     flex-direction: column;

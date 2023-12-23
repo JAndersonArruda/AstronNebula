@@ -1,9 +1,10 @@
-// api.js
-const apiServer = 'http://localhost:3000/api/apod'; // Altere para a URL do seu servidor intermediário
+const api_key = 'lSDf73qkUxwQr3rh9DE2nvWOhzErD6OUggMSzasP';
+
+const apiApod = 'https://api.nasa.gov/planetary/apod'
 
 const riqueriImgeAPI = async () => {
     try {
-        const response = await fetch(apiServer);
+        const response = await fetch(`${apiApod}?api_key=${api_key}`);
         const json = await response.json();
 
         const url = json.url;

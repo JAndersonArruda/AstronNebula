@@ -6,3 +6,36 @@
 body {
     background-color: #212121;
 }
+
+@media (max-width: 1380px) {
+    .container-image-day {
+        grid-template-columns: 30vw auto;
+    }
+}
+
+@media (max-width: 1350px) {
+    .container-image-day {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title-section-image-day {
+        display: block;
+        padding: 1.5rem 0;
+        width: 100%;
+    }
+
+    .container-description-image {
+        padding: 0;
+    }
+
+    .container-title-section-image-day {
+        display: none;
+    }
+
+    .image-day img {
+        width: 70%;
+    }
+}
+

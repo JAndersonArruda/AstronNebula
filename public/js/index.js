@@ -18,14 +18,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         imageDay.appendChild(image);
         imageDay.appendChild(title);
 
+        const containerTilte = document.createElement("div");
+        containerTilte.classList.add("container-title-section-image-day")
+        
         const titleSection = document.createElement("h1");
         titleSection.textContent = "Imagem do Dia";
         titleSection.classList.add("title-section");
 
+        containerTilte.appendChild(titleSection);
+
         const description = document.createElement("p");
         description.textContent = date.description;
         
-        descriptionImageDay.appendChild(titleSection);
+        descriptionImageDay.appendChild(containerTilte);
         descriptionImageDay.appendChild(description);
     } catch (error) {
         console.error('Erro na requisição:', error);
