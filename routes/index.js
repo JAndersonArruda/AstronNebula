@@ -11,7 +11,11 @@ router.use(expressStatic(join(__dirname, '..', 'src', 'app', 'templates')));
 router.use(expressStatic(join(__dirname, '..', 'public')));
 
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
+    router.get("/api-key/", async (req, res) => {
+        res.json({ api_key: process.env.NASA_API_KEY });
+    });
+
     res.sendFile(join(__dirname, '..', 'src', 'app', 'templates', 'base.html'));
 });
 
