@@ -1,12 +1,16 @@
 const apiApod = 'https://api.nasa.gov/planetary/apod'
 const apiLibraryImage = 'https://images-api.nasa.gov'
 
+
+const fetch_api_key = async () => {
+    const responseApiKey = await fetch('/api-key/');
+    const jsonApiKey = await responseApiKey.json();
+    return jsonApiKey.api_key;
+};
+
 const fetchApod = async () => {
     try {
-        const responseApiKey = await fetch('/api-key/');
-        const jsonApiKey = await responseApiKey.json();
-        const api_key = jsonApiKey.api_key;
-
+        const api_key = await fetch_api_key();
         const response = await fetch(`${apiApod}?api_key=${api_key}`);
         const json = await response.json();
 
@@ -19,6 +23,8 @@ const fetchApod = async () => {
     }
 }
 
-const fetchLibraryImage = async () => {}
+const fetchLibraryImage = async () => {
+
+}
 
 export { fetchApod, fetchLibraryImage };
