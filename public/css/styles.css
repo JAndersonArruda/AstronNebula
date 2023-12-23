@@ -39,3 +39,23 @@ body {
     }
 }
 
+@media (max-width: 1060px) {
+    section {
+        margin: 0 6rem;
+    }
+}
+
+@media (max-width: 930px) {
+    /* adicionar botao de navegação reduzido */
+    
+    section {
+        margin: 0 4rem;
+    }
+}
+
+@media (max-width: 720px) {
+    section {
+        margin: 0;
+    }
+}
+
