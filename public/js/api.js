@@ -5,9 +5,7 @@ const fetchApod = async () => {
     try {
         const responseApiKey = await fetch('/api-key/');
         const jsonApiKey = await responseApiKey.json();
-
         const api_key = jsonApiKey.api_key;
-        console.log(api_key);
 
         const response = await fetch(`${apiApod}?api_key=${api_key}`);
         const json = await response.json();
