@@ -7,6 +7,10 @@ body {
     background-color: #212121;
 }
 
+main {
+    min-height: 67vh;
+}
+
 @media (max-width: 1380px) {
     .container-image-day {
         grid-template-columns: 30vw auto;
