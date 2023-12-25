@@ -1,0 +1,45 @@
+section {
+    margin: 0 6rem;
+    padding: 6rem 4rem;
+    background-color: #ffffff0f;
+    color: #c8c0c0;
+}
+
+.container-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9rem 4rem 1rem;
+}
+
+.container-search div {
+
+}
+
+.container-search input {
+
+}
+
+.container-data {
+    padding: 1rem 4rem 1.5rem;
+}
+
+.data-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .5rem .5rem 0;
+    background-color: #e8e3e3;
+    border-radius: .1rem;
+}
+
+.container-midia {
+    padding: 0 0 .5rem;
+}
+
+.container-midia img {
+    height: 19vh;
+    width: auto;
+    border-radius: .2rem;
+}
