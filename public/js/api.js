@@ -19,12 +19,21 @@ const fetchApod = async () => {
         const description = json.explanation;
         return { url, name, description };
     } catch (err) {
-        console.error('Erro na solicitação da API da NASA:', err.message);
+        console.error('Erro na solicitação da API da NASA - Apod:', err.message);
     }
 }
 
-const fetchLibraryImage = async () => {
-
+const fetchLibraryImage = async (search = 'all', page = 1) => {
+    try {
+        const response = await fetch(`${apiLibraryImage}/search?q=${search}&page=${page}&media_type=image`)
+        const json = await response.json();
+    
+        const data = json.collection.items; // .links.href, para os links das imagens;
+        const pages = json.collection.links; // .rel, para o tipo; .href, para a proximapagina;
+        return { data, pages };
+    } catch (err) {
+        console.error('Erro na solicitação da API da NASA - Library:', err.message);
+    }
 }
 
 export { fetchApod, fetchLibraryImage };
