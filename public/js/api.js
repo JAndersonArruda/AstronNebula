@@ -23,7 +23,7 @@ const fetchApod = async () => {
     }
 }
 
-const fetchLibraryImage = async (search = 'all', page = 1) => {
+const fetchLibraryImage = async (search, page) => {
     try {
         const response = await fetch(`${apiLibraryImage}/search?q=${search}&page=${page}&media_type=image`)
         const json = await response.json();

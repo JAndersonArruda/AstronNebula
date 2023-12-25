@@ -1,13 +1,12 @@
 import { fetchLibraryImage } from "./api.js";
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const dataAreaDiv = document.querySelector("#data-area");
-    const searchInput = document.querySelector("#search-input");
-
-    try {
+const updateLibrary = async (search, page) => {
+     try {
+        const dataAreaDiv = document.querySelector("#data-area");
         dataAreaDiv.replaceChildren();
+        console.log(search);
 
-        const data = await fetchLibraryImage(); // { data, pages }
+        const data = await fetchLibraryImage(search, page); // { data, pages }
         
         data.data.forEach(midia => {
             const newMidia = document.createElement("div");
@@ -27,4 +26,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
         console.error('Erro na requisição:', error);
     }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const searchInput = document.querySelector("#search-input");
+
+    let search = "all";
+    const page = 1;
+
+    await updateLibrary(search, page);
+
+    searchInput.addEventListener("keydown", async (event) => {
+        if (event.key === "Enter") {
+            search = searchInput.value;
+            if (search === "") {
+                search = "all";
+            }
+            console.log(search);
+
+            await updateLibrary(search, page);
+        }
+    });
 });
