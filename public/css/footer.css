@@ -86,9 +86,17 @@ footer {
 
 .container-copyright span {
     color: #16e0d6;
+    margin: 0 .3rem;
 }
 
 .container-copyright i {
     color: #5afcfa;
     font-style: normal;
+}
+
+.author-link {
+    color: #c8c0c0;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 .5rem;
 }
