@@ -4,7 +4,6 @@ const updateLibrary = async (search, page) => {
      try {
         const dataAreaDiv = document.querySelector("#data-area");
         dataAreaDiv.replaceChildren();
-        console.log(search);
 
         const data = await fetchLibraryImage(search, page); // { data, pages }
         
@@ -42,7 +41,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (search === "") {
                 search = "all";
             }
-            console.log(search);
 
             await updateLibrary(search, page);
         }
