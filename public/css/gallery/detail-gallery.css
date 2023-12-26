@@ -1,5 +1,3 @@
-/* Adicione isso ao seu arquivo styles.css existente ou crie um novo arquivo CSS */
-
 .modal {
     display: none;
     position: fixed;
@@ -41,18 +39,21 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding: 0 .5rem  0 0;
+    overflow-y: scroll;
+    scroll-behavior: auto;
 }
 
 .modal-info h3 {
-    padding: 0 0 0 1.5rem;
     margin: 0 0 1rem;
+    flex-shrink: 0;
 }
 
 .modal-info p {
     text-align: justify;
     line-height: 1.7;
     font-size: 13px;
-    text-indent: .8rem;
+    flex-shrink: 0;
 }
 
 
