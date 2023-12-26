@@ -13,6 +13,10 @@ const updateLibrary = async (search, page) => {
             newMidia.classList.add("container-midia");
             newMidia.id = id ++;
 
+            newMidia.addEventListener("click", () => {
+                openDetail(midia.links[0].href, midia.data[0].title, midia.data[0].description);
+            });
+
             const img = document.createElement("img");
             img.src = midia.links[0].href;
             img.alt = midia.data[0].title;
@@ -23,6 +27,31 @@ const updateLibrary = async (search, page) => {
     } catch (error) {
         console.error('Erro na requisição:', error);
     }
+}
+
+const openDetail = (href, title, description) => {
+    const modal = document.querySelector("#my-modal");
+    const modalImg = document.querySelector("#modal-img");
+    const modalTitle = document.querySelector("#modal-title");
+    const modalDescription = document.querySelector("#modal-discription");
+
+    modal.style.display = "block";
+    modalImg.src = href;
+    modalImg.alt = title;
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+
+    const closeDetail = () => {
+        modal.style.display = "none";
+    }
+
+    const close = document.querySelector(".close");
+    close.addEventListener("click", closeDetail);
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeDetail();
+        }
+    });
 }
 
 const renderPages = async (page) => {
