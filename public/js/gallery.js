@@ -13,13 +13,9 @@ const updateLibrary = async (search, page) => {
             newMidia.classList.add("container-midia");
             newMidia.id = id ++;
 
-            const acess = (link, acess) => {
-                return link.map(os => os[acess]);
-            }
-
             const img = document.createElement("img");
-            img.src = acess(midia.links, "href")[0];
-            img.alt = acess(midia.data, "title")[0];
+            img.src = midia.links[0].href;
+            img.alt = midia.data[0].title;
 
             newMidia.appendChild(img);
             dataAreaDiv.appendChild(newMidia);
