@@ -27,6 +27,44 @@ const updateLibrary = async (search, page) => {
     }
 }
 
+const renderPages = async (page) => {
+    const areaPagesDiv = document.querySelector(".pages-elements");
+
+    areaPagesDiv.replaceChildren();
+
+    const divPagePrev = document.createElement("div");
+    divPagePrev.classList.add("page-previous");
+    const iconPrev = document.createElement("i");
+    iconPrev.classList.add("fa-solid", "fa-angle-left");
+
+    divPagePrev.appendChild(iconPrev);
+
+    const divPageNext = document.createElement("div");
+    divPageNext.classList.add("page-next");
+    const iconNext = document.createElement("i");
+    iconNext.classList.add("fa-solid", "fa-angle-right");
+
+    divPageNext.appendChild(iconNext);
+
+    const divPageNumbers = document.createElement("div");
+    divPageNumbers.classList.add("page-numbers");
+
+    for (let i = page; i <= 10; i ++) {
+        const divNumber = document.createElement("div");
+        divNumber.classList.add("page-num");
+        divNumber.id = i;
+        const text = document.createElement("p");
+        text.textContent = i;
+
+        divNumber.appendChild(text);
+        divPageNumbers.appendChild(divNumber);
+    }
+
+    areaPagesDiv.appendChild(divPagePrev);
+    areaPagesDiv.appendChild(divPageNumbers);
+    areaPagesDiv.appendChild(divPageNext);;
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     const searchInput = document.querySelector("#search-input");
 
@@ -34,6 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const page = 1;
 
     await updateLibrary(search, page);
+    await renderPages(page);
 
     searchInput.addEventListener("keydown", async (event) => {
         if (event.key === "Enter") {
