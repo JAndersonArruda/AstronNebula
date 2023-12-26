@@ -57,6 +57,7 @@ input:focus {
     width: 13.1vw;
     height: 15.51vh;
     padding: 0 0 .6rem;
+    cursor: pointer;
 }
 
 .container-midia img {

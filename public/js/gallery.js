@@ -6,16 +6,18 @@ const updateLibrary = async (search, page) => {
         dataAreaDiv.replaceChildren();
 
         const data = await fetchLibraryImage(search, page); // { data, pages }
-        
+
+        let id = (100*page) -100;
         data.data.forEach(midia => {
             const newMidia = document.createElement("div");
             newMidia.classList.add("container-midia");
-            const img = document.createElement("img");
+            newMidia.id = id ++;
 
             const acess = (link, acess) => {
                 return link.map(os => os[acess]);
             }
-            
+
+            const img = document.createElement("img");
             img.src = acess(midia.links, "href")[0];
             img.alt = acess(midia.data, "title")[0];
 
