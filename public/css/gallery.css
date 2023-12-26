@@ -15,8 +15,9 @@ section {
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    border-radius: .2rem;
-    padding: 0 .6rem;
+    border-radius: 1.5rem;
+    padding: 0 1.5rem 0 .6rem;
+    margin: 0 5rem
 }
 
 .search-elements div, .container-search input {
@@ -35,7 +36,7 @@ input:focus {
 }
 
 .container-data {
-    padding: 1rem 4rem 1.5rem;
+    padding: 1rem 4rem;
 }
 
 .data-area {
@@ -55,4 +56,55 @@ input:focus {
     height: 19vh;
     width: auto;
     border-radius: .2rem;
+}
+
+.container-pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 4rem 3rem;
+}
+
+.pages-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: .2rem solid #ffffff;
+    border-radius: .4rem;
+    padding: .5rem 0;
+    
+}
+
+.page-previous, .page-numbers, .page-next {
+    margin: 0 .5rem;
+    height: 100%;
+}
+
+.page-numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-num {
+    margin: .2rem .5rem;
+    padding: .3rem .85rem;
+    border-radius: .2rem;
+}
+
+.page-num p {
+    font-size: 13px;
+}
+
+.page-previous, .page-next {
+    padding: .4rem .6rem;
+    border-radius: .2rem;
+}
+
+.page-previous, .page-next, .page-num {
+    background-color: #ffffff;
+    color: #787777;
 }

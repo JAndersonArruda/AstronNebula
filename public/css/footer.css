@@ -12,7 +12,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .icon-footer {
@@ -56,7 +56,7 @@ footer {
 
 .footer-info p {
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.8;
     text-align: justify;
     text-indent: 1.5rem;
 }
@@ -75,8 +75,8 @@ footer {
 
 .container-copyright p {
     border-top: .1rem solid #c8c0c0;
-    padding-top: 1rem;
-    margin-top: 1rem;
+    padding-top: 1.8rem;
+    margin-top: 1.5rem;
     font-size: 13px;
 }
 
