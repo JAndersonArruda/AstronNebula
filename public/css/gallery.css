@@ -16,7 +16,7 @@ section {
     align-items: center;
     background-color: #ffffff;
     border-radius: 1.5rem;
-    padding: 0 1.5rem 0 .6rem;
+    padding: 0 .6rem;
     margin: 0 5rem
 }
 
@@ -29,6 +29,7 @@ section {
     padding: .7rem .4rem;
     border: 0;
     font-size: 13.5px;
+    border-radius: 1rem;
 }
 
 input:focus {
@@ -42,20 +43,28 @@ input:focus {
 .data-area {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: .5rem .5rem 0;
-    background-color: #e8e3e3;
-    border-radius: .1rem;
+    justify-content: space-around;
+    padding: .8rem .6rem .2rem;
+    background-color: #ffffff;
+    border-radius: .3rem;
 }
 
 .container-midia {
-    padding: 0 0 .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 13.1vw;
+    height: 15.51vh;
+    padding: 0 0 .6rem;
 }
 
 .container-midia img {
-    height: 19vh;
-    width: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     border-radius: .2rem;
+    color: #787777;
 }
 
 .container-pages {
