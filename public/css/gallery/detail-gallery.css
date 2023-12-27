@@ -1,8 +1,14 @@
+.container-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .modal {
     display: none;
     position: fixed;
-    top: 17%;
-    left: 9.5%;
+    top: 16%;
+    /*left: 9.5%; */
     width: 75vw;
     height: 65vh;
     padding: 2rem 3.5rem;
@@ -12,24 +18,12 @@
     overflow: hidden;
 }
 
-.close {
-    color: #fff;
-    float: right;
-    font-size: 2em;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.close:hover {
-    color: #bbb;
-}
-
 .modal-content {
     display: grid;
     grid-template-columns: 43rem auto;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 
 .image-content {
@@ -59,6 +53,7 @@
 }
 
 .scroll {
+    overflow: auto;
     overflow-y: scroll !important;
     scroll-behavior: smooth;
     max-height: 100%;
@@ -69,4 +64,17 @@
     line-height: 1.7;
     text-align: justify;
     text-indent: 1.4rem;
+}
+
+.close {
+    color: #fff;
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.close:hover {
+    color: #bbb;
 }
