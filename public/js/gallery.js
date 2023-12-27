@@ -95,11 +95,12 @@ const renderPages = async (page) => {
 document.addEventListener("DOMContentLoaded", async () => {
     const searchInput = document.querySelector("#search-input");
 
-    let search = "all";
+    let search = searchInput.value;
     const page = 1;
-
-    await updateLibrary(search, page);
-    await renderPages(page);
+    
+    if (!search) {
+        search = "all";
+    }
 
     searchInput.addEventListener("keydown", async (event) => {
         if (event.key === "Enter") {
@@ -111,4 +112,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             await updateLibrary(search, page);
         }
     });
+
+    await updateLibrary(search, page);
+    await renderPages(page);
 });
