@@ -35,7 +35,7 @@ const openDetail = (href, title, description) => {
     const modalTitle = document.querySelector("#modal-title");
     const modalDescription = document.querySelector("#modal-discription");
 
-    modal.style.display = "block";
+    modal.style.display = "flex";
     modalImg.src = href;
     modalImg.alt = title;
     modalTitle.textContent = title;

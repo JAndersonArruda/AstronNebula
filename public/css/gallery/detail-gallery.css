@@ -59,11 +59,14 @@
 }
 
 .scroll {
-    
+    overflow-y: scroll !important;
+    scroll-behavior: smooth;
+    max-height: 100%;
 }
 
 .scroll p {
     font-size: 13px;
     line-height: 1.7;
     text-align: justify;
+    text-indent: 1.4rem;
 }
