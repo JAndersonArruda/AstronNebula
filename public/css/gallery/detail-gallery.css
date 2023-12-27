@@ -15,7 +15,8 @@
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     border-radius: .3rem;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow: auto;
 }
 
 .modal-content {
@@ -52,11 +53,13 @@
     margin: 0 0 1rem;
 }
 
+/* isn't functional */
 .scroll {
     overflow: auto;
     overflow-y: scroll !important;
     scroll-behavior: smooth;
     max-height: 100%;
+    padding: 0 0 2rem;
 }
 
 .scroll p {
