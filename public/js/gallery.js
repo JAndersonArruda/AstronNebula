@@ -55,28 +55,11 @@ const openDetail = (href, title, description) => {
 }
 
 const renderPages = async (page) => {
-    const areaPagesDiv = document.querySelector(".pages-elements");
+    const areaPagesDiv = document.querySelector(".page-numbers");
 
     areaPagesDiv.replaceChildren();
 
-    const divPagePrev = document.createElement("div");
-    divPagePrev.classList.add("page-previous");
-    const iconPrev = document.createElement("i");
-    iconPrev.classList.add("fa-solid", "fa-angle-left");
-
-    divPagePrev.appendChild(iconPrev);
-
-    const divPageNext = document.createElement("div");
-    divPageNext.classList.add("page-next");
-    const iconNext = document.createElement("i");
-    iconNext.classList.add("fa-solid", "fa-angle-right");
-
-    divPageNext.appendChild(iconNext);
-
-    const divPageNumbers = document.createElement("div");
-    divPageNumbers.classList.add("page-numbers");
-
-    for (let i = page; i <= 10; i ++) {
+    for (let i = page; i <= page +9; i ++) {
         const divNumber = document.createElement("div");
         divNumber.classList.add("page-num");
         divNumber.id = i;
@@ -84,19 +67,29 @@ const renderPages = async (page) => {
         text.textContent = i;
 
         divNumber.appendChild(text);
-        divPageNumbers.appendChild(divNumber);
+        areaPagesDiv.appendChild(divNumber);
     }
-
-    areaPagesDiv.appendChild(divPagePrev);
-    areaPagesDiv.appendChild(divPageNumbers);
-    areaPagesDiv.appendChild(divPageNext);;
 }
 
+const actionPage = (action, numPage) => {
+    if (action === "next") {
+        return numPage +1;
+    } else if (action === "previous" && numPage > 1) {
+        return numPage -1;
+    }
+    return numPage;
+}
+
+
+
+// Main Functionality
 document.addEventListener("DOMContentLoaded", async () => {
     const searchInput = document.querySelector("#search-input");
+    const prev = document.querySelector(".page-previous");
+    const next = document.querySelector(".page-next"); 
 
     let search = searchInput.value;
-    const page = 1;
+    let page = 1;
     
     if (!search) {
         search = "all";
@@ -105,12 +98,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     searchInput.addEventListener("keydown", async (event) => {
         if (event.key === "Enter") {
             search = searchInput.value;
+            page = 1;
             if (search === "") {
                 search = "all";
             }
 
             await updateLibrary(search, page);
+            await renderPages(page)
         }
+    });
+
+    prev.addEventListener("mouseover", () => prev.style.cursor = "pointer");
+    prev.addEventListener("click", async () => {
+        page = actionPage("previous", page);
+
+        await updateLibrary(search, page);
+        await renderPages(page);
+    });
+
+    next.addEventListener("mouseover", () => next.style.cursor = "pointer");
+    next.addEventListener("click", async () => {
+        page = actionPage("next", page);
+
+        await updateLibrary(search, page);
+        await renderPages(page);
     });
 
     await updateLibrary(search, page);
