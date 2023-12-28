@@ -45,9 +45,6 @@ const openDetail = (href, title, description) => {
 
     const close = document.querySelector(".close");
     close.addEventListener("click", closeDetail);
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) closeDetail();
-    });
 }
 
 const renderPages = async (search, page) => {

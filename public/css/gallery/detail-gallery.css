@@ -8,7 +8,6 @@
     display: none;
     position: fixed;
     top: 16%;
-    /*left: 9.5%; */
     width: 75vw;
     height: 65vh;
     padding: 2rem 3.5rem;
@@ -70,6 +69,7 @@
 }
 
 .close {
+    display: block;
     color: #fff;
     float: right;
     font-size: 2em;
