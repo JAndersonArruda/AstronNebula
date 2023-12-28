@@ -54,7 +54,7 @@ const openDetail = (href, title, description) => {
     });
 }
 
-const renderPages = async (page) => {
+const renderPages = async (search, page) => {
     const areaPagesDiv = document.querySelector(".page-numbers");
 
     areaPagesDiv.replaceChildren();
@@ -63,6 +63,13 @@ const renderPages = async (page) => {
         const divNumber = document.createElement("div");
         divNumber.classList.add("page-num");
         divNumber.id = i;
+
+        divNumber.addEventListener("mouseover", () => divNumber.style.cursor = "pointer");
+        divNumber.addEventListener("click", async () => {
+            await updateLibrary(search, i);
+            await renderPages(search, i);
+        });
+
         const text = document.createElement("p");
         text.textContent = i;
 
@@ -86,7 +93,7 @@ const actionPage = (action, numPage) => {
 document.addEventListener("DOMContentLoaded", async () => {
     const searchInput = document.querySelector("#search-input");
     const prev = document.querySelector(".page-previous");
-    const next = document.querySelector(".page-next"); 
+    const next = document.querySelector(".page-next");
 
     let search = searchInput.value;
     let page = 1;
@@ -104,7 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             await updateLibrary(search, page);
-            await renderPages(page)
+            await renderPages(search, page)
         }
     });
 
@@ -113,7 +120,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         page = actionPage("previous", page);
 
         await updateLibrary(search, page);
-        await renderPages(page);
+        await renderPages(search, page);
     });
 
     next.addEventListener("mouseover", () => next.style.cursor = "pointer");
@@ -121,9 +128,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         page = actionPage("next", page);
 
         await updateLibrary(search, page);
-        await renderPages(page);
+        await renderPages(search, page);
     });
 
     await updateLibrary(search, page);
-    await renderPages(page);
+    await renderPages(search, page);
 });
