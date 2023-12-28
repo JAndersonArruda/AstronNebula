@@ -1,5 +1,7 @@
 import { fetchLibraryImage } from "./api.js";
 
+let indPage = 1;
+
 const updateLibrary = async (search, page) => {
      try {
         const dataAreaDiv = document.querySelector("#data-area");
@@ -68,6 +70,7 @@ const renderPages = async (search, page) => {
         divNumber.addEventListener("click", async () => {
             await updateLibrary(search, i);
             await renderPages(search, i);
+            indPage = i;          
         });
 
         const text = document.createElement("p");
@@ -96,7 +99,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const next = document.querySelector(".page-next");
 
     let search = searchInput.value;
-    let page = 1;
     
     if (!search) {
         search = "all";
@@ -105,32 +107,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     searchInput.addEventListener("keydown", async (event) => {
         if (event.key === "Enter") {
             search = searchInput.value;
-            page = 1;
+            indPage = 1;
             if (search === "") {
                 search = "all";
             }
 
-            await updateLibrary(search, page);
-            await renderPages(search, page)
+            await updateLibrary(search, indPage);
+            await renderPages(search, indPage)
         }
     });
 
     prev.addEventListener("mouseover", () => prev.style.cursor = "pointer");
     prev.addEventListener("click", async () => {
-        page = actionPage("previous", page);
+        indPage = actionPage("previous", indPage);
 
-        await updateLibrary(search, page);
-        await renderPages(search, page);
+        await updateLibrary(search, indPage);
+        await renderPages(search, indPage);
     });
 
     next.addEventListener("mouseover", () => next.style.cursor = "pointer");
     next.addEventListener("click", async () => {
-        page = actionPage("next", page);
+        indPage = actionPage("next", indPage);
 
-        await updateLibrary(search, page);
-        await renderPages(search, page);
+        await updateLibrary(search, indPage);
+        await renderPages(search, indPage);
     });
 
-    await updateLibrary(search, page);
-    await renderPages(search, page);
+    await updateLibrary(search, indPage);
+    await renderPages(search, indPage);
 });
