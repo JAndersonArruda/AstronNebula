@@ -15,9 +15,7 @@ const updateLibrary = async (search, page) => {
             newMidia.classList.add("container-midia");
             newMidia.id = id ++;
 
-            newMidia.addEventListener("click", () => {
-                openDetail(midia.links[0].href, midia.data[0].title, midia.data[0].description);
-            });
+            newMidia.addEventListener("click", () => openDetail(midia.links[0].href, midia.data[0].title, midia.data[0].description));
 
             const img = document.createElement("img");
             img.src = midia.links[0].href;
@@ -43,16 +41,12 @@ const openDetail = (href, title, description) => {
     modalTitle.textContent = title;
     modalDescription.textContent = description;
 
-    const closeDetail = () => {
-        modal.style.display = "none";
-    }
+    const closeDetail = () => modal.style.display = "none";
 
     const close = document.querySelector(".close");
     close.addEventListener("click", closeDetail);
     window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            closeDetail();
-        }
+        if (event.target === modal) closeDetail();
     });
 }
 
@@ -70,7 +64,7 @@ const renderPages = async (search, page) => {
         divNumber.addEventListener("click", async () => {
             await updateLibrary(search, i);
             await renderPages(search, i);
-            indPage = i;          
+            indPage = i;
         });
 
         const text = document.createElement("p");
@@ -82,11 +76,8 @@ const renderPages = async (search, page) => {
 }
 
 const actionPage = (action, numPage) => {
-    if (action === "next") {
-        return numPage +1;
-    } else if (action === "previous" && numPage > 1) {
-        return numPage -1;
-    }
+    if (action === "next") return numPage +1;
+    else if (action === "previous" && numPage > 1) return numPage -1;
     return numPage;
 }
 
@@ -100,17 +91,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let search = searchInput.value;
     
-    if (!search) {
-        search = "all";
-    }
+    if (!search) search = "all";
 
     searchInput.addEventListener("keydown", async (event) => {
         if (event.key === "Enter") {
             search = searchInput.value;
             indPage = 1;
-            if (search === "") {
-                search = "all";
-            }
+            if (search === "") search = "all";
 
             await updateLibrary(search, indPage);
             await renderPages(search, indPage)
@@ -120,7 +107,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     prev.addEventListener("mouseover", () => prev.style.cursor = "pointer");
     prev.addEventListener("click", async () => {
         indPage = actionPage("previous", indPage);
-
         await updateLibrary(search, indPage);
         await renderPages(search, indPage);
     });
@@ -128,7 +114,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     next.addEventListener("mouseover", () => next.style.cursor = "pointer");
     next.addEventListener("click", async () => {
         indPage = actionPage("next", indPage);
-
         await updateLibrary(search, indPage);
         await renderPages(search, indPage);
     });
