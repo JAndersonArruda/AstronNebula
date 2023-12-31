@@ -13,33 +13,33 @@ main {
 
 
 @media (max-width: 1380px) {
-    .container-image-day {
+    .container-midia-day {
         grid-template-columns: 30vw auto;
     }
 }
 
 @media (max-width: 1350px) {
-    .container-image-day {
+    .container-midia-day {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .title-section-image-day {
+    .title-section-midia-day {
         display: block;
         padding: 1.5rem 0;
         width: 100%;
     }
 
-    .container-description-image {
+    .container-description-midia {
         padding: 0;
     }
 
-    .container-title-section-image-day {
+    .container-title-section-midia-day {
         display: none;
     }
 
-    .image-day img {
+    .midia {
         width: 70%;
     }
 }

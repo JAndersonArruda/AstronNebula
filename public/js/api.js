@@ -17,7 +17,8 @@ const fetchApod = async () => {
         const url = json.url;
         const name = json.title;
         const description = json.explanation;
-        return { url, name, description };
+        const midia_type = json.media_type;
+        return { url, name, description, midia_type };
     } catch (err) {
         console.error('Erro na solicitação da API da NASA - Apod:', err.message);
     }

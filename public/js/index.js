@@ -1,27 +1,39 @@
 import { fetchApod }  from "./api.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const imageDay = document.querySelector(".image-day");
-    const descriptionImageDay = document.querySelector(".container-description-image");
+    const midiaDay = document.querySelector(".midia-day");
+    const descriptionImageDay = document.querySelector(".container-description-midia");
 
     try {
         const date = await fetchApod();
 
-        const image = document.createElement("img");
-        image.src = date.url;
-        image.alt = "Image day";
+        const typeMidia = (type) => {
+            if (type === "video") return document.createElement("iframe");
+            else if (type === "image") return document.createElement("img");
+            return document.createElement("img");
+        }
+
+        const midia = typeMidia(date.midia_type);
+        midia.src = date.url;
+        midia.classList.add("midia");
+        if (date.midia_type === "image") midia.alt = "Midia day";
+        if (date.midia_type === "video") {
+            midia.title = "Midia day";
+            midia.setAttribute("frameborder", "0");
+            midia.setAttribute("allowfullscreen", "");
+        }
 
         const title = document.createElement("p");
         title.textContent = date.name;
 
-        imageDay.appendChild(image);
-        imageDay.appendChild(title);
+        midiaDay.appendChild(midia);
+        midiaDay.appendChild(title);
 
         const containerTilte = document.createElement("div");
-        containerTilte.classList.add("container-title-section-image-day")
+        containerTilte.classList.add("container-title-section-midia-day")
         
         const titleSection = document.createElement("h1");
-        titleSection.textContent = "Imagem do Dia";
+        titleSection.textContent = "Mídia do Dia";
         titleSection.classList.add("title-section");
 
         containerTilte.appendChild(titleSection);
