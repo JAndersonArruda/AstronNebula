@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         const typeMidia = (type) => {
             if (type === "video") return document.createElement("iframe");
             else if (type === "image") return document.createElement("img");
-            return document.createElement("img");
         }
 
         const midia = typeMidia(date.midia_type);
