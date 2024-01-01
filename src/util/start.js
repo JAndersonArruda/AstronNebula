@@ -1,3 +1,5 @@
+import chalk from "chalk";
+
 const startDrawing = (protocol, host, port) => {
     console.log(" _____________________   _   _   ______________   _   _   _____________________ \n");
     console.log("     ____   _   _   _   _   _   _    __ __    _   _   _   _   _   _ ");
@@ -8,9 +10,10 @@ const startDrawing = (protocol, host, port) => {
     console.log(" _____________________   _   _   ______________   _   _   _____________________ \n");
 
     console.log("");
+    console.log(chalk.rgb(255, 0, 0)("* Access point used for development, does not have a definitive connection to the Web"));
     console.log("* Serving Express app");
-    console.log(`* Running on: ${protocol}://${host}:${port}`);
-    console.log("Press CTRL+C to quit");
+    console.log("* Running on:" + chalk.rgb(70, 200, 215)(` ${protocol}://${host}:${port}`));
+    console.log("  " + chalk.rgb(255, 200, 50)("Press CTRL+C to quit"));
 }
 
 export default startDrawing
