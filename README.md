@@ -1,52 +1,48 @@
 ## AstronNebula
-O referente projeto, foi desenvolvido buscando tornar possivel uma ideia relacionada ao acesso de informações astrologicas. O ponto central é autilização das APIs disponibilizadas pela propria NASA. Utilizando-as é possivel ter acesso a varios dados interesantes, incluindo os que estão presentes neste projeto. De forma sucinta, o projeto contem uma galeria de imagens e vídeos, além de um calendario com datas de eventos astronomicos importantes. Então, bem vindo ao AstronNebula.
+The related project was developed seeking to make it possible an idea related to access to astrological information. The central point is the use of APIs made available by NASA itself. Using them it is possible to have access to various interesting data, including those present in the projec. Briefly, the project contains a gallery of images and videos, as well as a calendar with date of important astronomical events. So, welcome to AstronNebula.
 
 ##
-### Estrutura
-
-
-##
-### Funcioalidades
+### Structure
 
 
 ##
-### Tecnologias
-As tecnologias presentes no projeto são:
+### Functionalities
 
-1.Node.js \
-2.Express \
-3.Javascript \
-4.HTML \
-5.CSS
 
 ##
-### Executar em sua maquina
-Para ter acesso e executar o projeto, algumas configurações são necessarias.
+### Technologies
+The technologies present in the project are: 
+1. Node.js
+2. Express
+3. Javascript
+4. HTML
+5. CSS
 
-***Passo 01***
+##
+### Run on your machine
+To access and run the project, some configurations are necessary. 
 
-Crie um novo diretorio vasio e acesse-o pelo terminal
+***Step 01*** \
+Create a new empty directory and access it through the terminal
 ```
-mkdir name-diretorio
-cd name-diretorio
+mkdir directory-name
+cd directory-name
 ```
 
-***Passo 02***
+***Step 02***\
+According to the servise you use to connect to the repository, execute one of the following commands:
 
-De acordo com o serviço que utiliza para se conectar ao repositorio execute um dos seguintes comandos:
-
-Via requisição HTTP:
+Via HTTP request:
 ``` 
 git clone https://github.com/JAndersonArruda/AstronNebula.git
 ```
-Via chave SSH:
+Via SSH key:
 ``` 
 git clone git@github.com:JAndersonArruda/AstronNebula.git
 ```
 
-***Passo 03***
-
-Execute o arquivo index.html, localizado na raiz do projeto.
+***Step 03***\
+Access the project root and run the server.
 ```
 cd AstronNebula
 npm install
@@ -54,5 +50,5 @@ node app.js
 ```
 
 ##
-### Autor
+### Author
 [J. A. F. Arruda](https://jandersonarruda.github.io/)
