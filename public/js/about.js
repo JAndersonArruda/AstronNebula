@@ -1,7 +1,7 @@
 const dataProjects = [
     {
         title: "Midia of the Day",
-        discription: "1- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi magnam impedit accusamus nesciunt maiores beatae qui nisi dolorum, voluptas aliquid. Libero nemo facere nesciunt, minima culpa fugiat molestias itaque quis?",
+        discription: "This session presents daily media information. Using the APOD API, made available by NASA, it provides data such as title, description, date, type of media and media access link, such as images and videos, in which this information is updated daily, thus every day The data will be different, making it more interesting every day. In short, a different media file per day.",
         alt: "Representation of the midia of the day",
         url: "/img/about-home-midia.png"
     },
@@ -13,13 +13,13 @@ const dataProjects = [
     },
     {
         title: "Gallery",
-        discription: "3- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi magnam impedit accusamus nesciunt maiores beatae qui nisi dolorum, voluptas aliquid. Libero nemo facere nesciunt, minima culpa fugiat molestias itaque quis?",
+        discription: "The Gallery is the part of the website where images are available from the database provided by NASA, with more than 1000 images present, each one has detailed data that helps you better understand each one of them. The data is obtained by HTTP query in the API Library, provided by NASA, where it is presented in the Gallery. The data provided includes the title, NASA identification ID, creation date, description, media type and access link. In addition to presenting this information, it is also possible to search, in English, for different contents according to key words, such as planet, moon, sun, Apollo 13, among others. So that the images can be better understood, there is a Gallery subpage that presents the details of each image.",
         alt: "Representation of the gallery",
         url: "/img/about-gallery.png"
     },
     {
         title: "Details of the Gallery",
-        discription: "4- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi magnam impedit accusamus nesciunt maiores beatae qui nisi dolorum, voluptas aliquid. Libero nemo facere nesciunt, minima culpa fugiat molestias itaque quis?",
+        discription: "The gallery details subpage displays the expanded image in full size, its title and description. Making use of NASA's API Library, every detail helps in understanding each image in the gallery.",
         alt: "Representation of the details of the gallery",
         url: "/img/about-details-gallery.png"
     },
