@@ -5,11 +5,11 @@ let indPage = 1;
 const updateLibrary = async (search, page) => {
      try {
         const dataAreaDiv = document.querySelector("#data-area");
-        dataAreaDiv.replaceChildren();
-
+        
         const data = await fetchLibraryImage(search, page); // { data, pages }
-
+        
         let id = (100*page) -100;
+        dataAreaDiv.replaceChildren();
         data.data.forEach(midia => {
             const newMidia = document.createElement("div");
             newMidia.classList.add("container-midia");
