@@ -27,22 +27,21 @@ const dataProjects = [
 
 const loadAboutProject = async (index) => {
     const image = document.querySelector(".project-image");
-    const description = document.querySelector(".container-project-description");
-    const status = document.querySelector(".image-status");
-
     image.alt = dataProjects[index].alt;
     image.src = dataProjects[index].url;
-
+    
+    const description = document.querySelector(".container-project-description");
     const title = document.createElement("h3");
     title.classList.add("title-about");
     title.textContent = dataProjects[index].title;
     const paragraph = document.createElement("p");
     paragraph.textContent = dataProjects[index].discription;
-
+    
     description.replaceChildren();
     description.appendChild(title);
     description.appendChild(paragraph);
-
+    
+    const status = document.querySelector(".image-status");
     status.replaceChildren();
     for (let i = 0; i < dataProjects.length; i ++) {
         const icon = document.createElement("i");
@@ -81,7 +80,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     await loadAboutProject(indexAbout);
-
 
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
