@@ -93,13 +93,23 @@ section {
     line-height: 1.8;
 }
 
-.container-project-description h3 {
-    
-}
-
 
 .container-tchnology {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.container-tchnology-title {
+    width: 100%;
+}
+
+.container-tchnology-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-author {
