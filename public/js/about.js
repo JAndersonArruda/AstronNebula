@@ -68,22 +68,17 @@ const passImage = (index, type) => {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const next = document.querySelector(".image-next");
-    const prev = document.querySelector(".image-previous");
+    const pages = document.querySelectorAll(".page");
 
     let indexAbout = 0;
 
-    next.addEventListener("mousemove", () => next.style.cursor = "pointer");
-    next.addEventListener("click", async () => {
-        indexAbout = passImage(indexAbout, "next");
-        await loadAboutProject(indexAbout);
+    pages.forEach(page => {
+        page.addEventListener("mousemove", () => page.style.cursor = "pointer");
+        page.addEventListener("click", async () => {
+            indexAbout = passImage(indexAbout, page.id);
+            await loadAboutProject(indexAbout);
+        });
     });
-
-    prev.addEventListener("mousemove", () => prev.style.cursor = "pointer");
-    prev.addEventListener("click", async () => {
-        indexAbout = passImage(indexAbout, "prev");
-        await loadAboutProject(indexAbout);
-    })
 
     await loadAboutProject(indexAbout);
 
