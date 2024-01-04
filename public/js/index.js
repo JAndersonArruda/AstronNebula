@@ -43,6 +43,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         descriptionImageDay.appendChild(containerTilte);
         descriptionImageDay.appendChild(description);
     } catch (error) {
-        console.error('Erro na requisição:', error);
+        console.error('Erro no acesso aos dados da requisição (APOD)', error);
     }
 });

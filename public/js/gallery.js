@@ -3,10 +3,10 @@ import { fetchLibraryImage } from "./api.js";
 let indPage = 1;
 
 const updateLibrary = async (search, page) => {
-     try {
-        const dataAreaDiv = document.querySelector("#data-area");
-        
-        const data = await fetchLibraryImage(search, page); // { data, pages }
+    const dataAreaDiv = document.querySelector("#data-area");
+
+    try {
+        const data = await fetchLibraryImage(search, page);
         
         let id = (100*page) -100;
         dataAreaDiv.replaceChildren();
@@ -25,7 +25,7 @@ const updateLibrary = async (search, page) => {
             dataAreaDiv.appendChild(newMidia);
         });
     } catch (error) {
-        console.error('Erro na requisição:', error);
+        console.error('Erro no acesso aos dados da requisição (Library):', error);
     }
 }
 
@@ -79,9 +79,6 @@ const actionPage = (action, numPage) => {
     return numPage;
 }
 
-
-
-// Main Functionality
 document.addEventListener("DOMContentLoaded", async () => {
     const searchInput = document.querySelector("#search-input");
     let search = searchInput.value;

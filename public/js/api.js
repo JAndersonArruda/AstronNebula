@@ -20,7 +20,7 @@ const fetchApod = async () => {
         const midia_type = json.media_type;
         return { url, name, description, midia_type };
     } catch (err) {
-        console.error('Erro na solicitação da API da NASA - Apod:', err.message);
+        console.error('Erro na solicitação da API (Apod):', err.message);
     }
 }
 
@@ -33,7 +33,7 @@ const fetchLibraryImage = async (search, page) => {
         const pages = json.collection.links; // .rel, para o tipo; .href, para a proximapagina;
         return { data, pages };
     } catch (err) {
-        console.error('Erro na solicitação da API da NASA - Library:', err.message);
+        console.error('Erro na solicitação da API (Library):', err.message);
     }
 }
 
