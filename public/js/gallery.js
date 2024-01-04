@@ -83,8 +83,6 @@ const actionPage = (action, numPage) => {
 // Main Functionality
 document.addEventListener("DOMContentLoaded", async () => {
     const searchInput = document.querySelector("#search-input");
-    const prev = document.querySelector(".page-previous");
-    const next = document.querySelector(".page-next");
 
     let search = searchInput.value;
     
@@ -101,18 +99,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-    prev.addEventListener("mouseover", () => prev.style.cursor = "pointer");
-    prev.addEventListener("click", async () => {
-        indPage = actionPage("previous", indPage);
-        await updateLibrary(search, indPage);
-        await renderPages(search, indPage);
-    });
-
-    next.addEventListener("mouseover", () => next.style.cursor = "pointer");
-    next.addEventListener("click", async () => {
-        indPage = actionPage("next", indPage);
-        await updateLibrary(search, indPage);
-        await renderPages(search, indPage);
+    const pages = document.querySelectorAll(".page-gallery");
+    pages.forEach(page => {
+        page.addEventListener("mouseover", () => page.style.cursor = "pointer");
+        page.addEventListener("click", async () => {
+            indPage = actionPage(page.id, indPage);
+            await updateLibrary(search, indPage);
+            await renderPages(search, indPage);
+        });
     });
 
     await updateLibrary(search, indPage);

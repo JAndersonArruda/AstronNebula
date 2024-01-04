@@ -87,7 +87,7 @@ input:focus {
     
 }
 
-.page-previous, .page-numbers, .page-next {
+.page-gallery, .page-numbers {
     margin: 0 .5rem;
     height: 100%;
 }
@@ -109,12 +109,12 @@ input:focus {
     font-size: 13px;
 }
 
-.page-previous, .page-next {
+.page-gallery {
     padding: .4rem .6rem;
     border-radius: .2rem;
 }
 
-.page-previous, .page-next, .page-num {
+.page-gallery, .page-num {
     background-color: #ffffff;
     color: #787777;
 }

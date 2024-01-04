@@ -3,7 +3,7 @@ const dataProjects = [
         title: "Midia of the Day",
         discription: "This session presents daily media information. Using the APOD API, made available by NASA, it provides data such as title, description, date, type of media and media access link, such as images and videos, in which this information is updated daily, thus every day The data will be different, making it more interesting every day. In short, a different media file per day.",
         alt: "Representation of the midia of the day",
-        url: "/img/about-home-midia.png"
+        url: "/img/about-midia.png"
     },
     {
         title: "Calendar",
@@ -68,7 +68,7 @@ const passImage = (index, type) => {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const pages = document.querySelectorAll(".page");
+    const pages = document.querySelectorAll(".page-about");
 
     let indexAbout = 0;
 
