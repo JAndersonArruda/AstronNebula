@@ -51,11 +51,12 @@ const renderPages = async (search, page) => {
     const areaPagesDiv = document.querySelector(".page-numbers");
 
     areaPagesDiv.replaceChildren();
-
     for (let i = page; i <= page +9; i ++) {
         const divNumber = document.createElement("div");
         divNumber.classList.add("page-num");
         divNumber.id = i;
+
+        if (divNumber.id != page) divNumber.style.backgroundColor = "rgb(230, 230, 230)";
 
         divNumber.addEventListener("mouseover", () => divNumber.style.cursor = "pointer");
         divNumber.addEventListener("click", async () => {
@@ -83,7 +84,6 @@ const actionPage = (action, numPage) => {
 // Main Functionality
 document.addEventListener("DOMContentLoaded", async () => {
     const searchInput = document.querySelector("#search-input");
-
     let search = searchInput.value;
     
     if (!search) search = "all";
