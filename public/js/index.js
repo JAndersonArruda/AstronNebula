@@ -24,10 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const title = document.createElement("p");
         title.textContent = date.name;
-
-        midiaDay.appendChild(midia);
-        midiaDay.appendChild(title);
-
+        
         const containerTilte = document.createElement("div");
         containerTilte.classList.add("container-title-section-midia-day")
         
@@ -35,11 +32,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         titleSection.textContent = "Mídia do Dia";
         titleSection.classList.add("title-section");
 
-        containerTilte.appendChild(titleSection);
-
         const description = document.createElement("p");
         description.textContent = date.description;
         
+        midiaDay.appendChild(midia);
+        midiaDay.appendChild(title);
+        containerTilte.appendChild(titleSection);
         descriptionImageDay.appendChild(containerTilte);
         descriptionImageDay.appendChild(description);
     } catch (error) {
