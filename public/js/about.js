@@ -86,4 +86,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     })
 
     await loadAboutProject(indexAbout);
+
+
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        card.addEventListener("mousemove", () => card.style.cursor = "pointer");
+        card.addEventListener("click", () => {
+            if (card.id === "node") window.open('https://nodejs.org/en', '_target');
+            else if (card.id === "express") window.open('https://expressjs.com/pt-br/', '_target');
+            else if (card.id === "api") window.open('https://api.nasa.gov/', '_target');
+        });
+    });
 });
