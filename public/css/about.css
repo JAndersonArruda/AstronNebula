@@ -172,7 +172,7 @@ section {
     margin: 1.5rem 0;
     padding: .8rem 1.3rem;
     background-color: #413f3f;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
 }
 
 .content-image-author, .content-explanation-author {
@@ -181,7 +181,7 @@ section {
 
 .content-image-author {
     display: flex;
-    flex-basis: 30%;
+    flex-basis: 25%;
     justify-content: center;
     align-items: center;
 }
