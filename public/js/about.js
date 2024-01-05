@@ -52,11 +52,6 @@ const loadAboutProject = async (index) => {
         
         status.appendChild(icon);
     }
-
-    // setInterval(async () => {
-    //     if (index === dataProjects.length -1) await loadAboutProject(0);
-    //     await loadAboutProject(index +1);
-    // }, 6000);
 }
 
 const passImage = (index, type) => {
@@ -75,16 +70,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     const pages = document.querySelectorAll(".page-about");
 
     let indexAbout = 0;
+    let time = 6000;
 
     pages.forEach(page => {
         page.addEventListener("mousemove", () => page.style.cursor = "pointer");
         page.addEventListener("click", async () => {
             indexAbout = passImage(indexAbout, page.id);
+            time = 6000;
             await loadAboutProject(indexAbout);
         });
     });
 
+    // const stopPages = document.querySelectorAll(".stop-page-about");
+    // stopPages.forEach(stop => stop.addEventListener("mousemove", () => time = 10000));
+
     await loadAboutProject(indexAbout);
+
+    setInterval(async () => {
+        if (indexAbout === dataProjects.length -1) indexAbout = 0;
+        else indexAbout += 1;
+        await loadAboutProject(indexAbout);
+    }, time);
 
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
