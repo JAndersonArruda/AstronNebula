@@ -52,6 +52,11 @@ const loadAboutProject = async (index) => {
         
         status.appendChild(icon);
     }
+
+    // setInterval(async () => {
+    //     if (index === dataProjects.length -1) await loadAboutProject(0);
+    //     await loadAboutProject(index +1);
+    // }, 6000);
 }
 
 const passImage = (index, type) => {
