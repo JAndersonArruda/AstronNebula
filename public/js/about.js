@@ -68,10 +68,11 @@ const passImage = (index, type) => {
 
 document.addEventListener("DOMContentLoaded", async () => {
     const pages = document.querySelectorAll(".page-about");
-
-    let indexAbout = 0;
+    
     let time = 6000;
-
+    let interval;
+    let indexAbout = 0;
+    
     pages.forEach(page => {
         page.addEventListener("mousemove", () => page.style.cursor = "pointer");
         page.addEventListener("click", async () => {
@@ -81,17 +82,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
-    // const stopPages = document.querySelectorAll(".stop-page-about");
-    // stopPages.forEach(stop => stop.addEventListener("mousemove", () => time = 10000));
+    const stopPages = document.querySelectorAll("#stop-page-about");
+    stopPages.forEach(stop => stop.addEventListener("mouseenter", () => clearInterval(interval)));
+    stopPages.forEach(stop => stop.addEventListener("mouseleave", () => {
+        interval = setInterval(async () => {
+            if (indexAbout === dataProjects.length -1) indexAbout = 0;
+            else indexAbout += 1;
+            await loadAboutProject(indexAbout);
+        }, time);
+    }));
 
     await loadAboutProject(indexAbout);
-
-    setInterval(async () => {
+    
+    interval = setInterval(async () => {
         if (indexAbout === dataProjects.length -1) indexAbout = 0;
         else indexAbout += 1;
         await loadAboutProject(indexAbout);
     }, time);
-
+    
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
         card.addEventListener("mousemove", () => card.style.cursor = "pointer");
