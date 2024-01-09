@@ -69,7 +69,7 @@ const passImage = (index, type) => {
 document.addEventListener("DOMContentLoaded", async () => {
     const pages = document.querySelectorAll(".page-about");
     
-    let time = 6000;
+    const time = 4000;
     let interval;
     let indexAbout = 0;
     
@@ -77,28 +77,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         page.addEventListener("mousemove", () => page.style.cursor = "pointer");
         page.addEventListener("click", async () => {
             indexAbout = passImage(indexAbout, page.id);
-            time = 6000;
             await loadAboutProject(indexAbout);
         });
     });
 
-    const stopPages = document.querySelectorAll("#stop-page-about");
-    stopPages.forEach(stop => stop.addEventListener("mouseenter", () => clearInterval(interval)));
-    stopPages.forEach(stop => stop.addEventListener("mouseleave", () => {
+    const loopProjectAbout = () => {
         interval = setInterval(async () => {
             if (indexAbout === dataProjects.length -1) indexAbout = 0;
             else indexAbout += 1;
             await loadAboutProject(indexAbout);
         }, time);
-    }));
+    }
+
+    const stopPages = document.querySelectorAll("#stop-page-about");
+    stopPages.forEach(stop => stop.addEventListener("mouseenter", () => clearInterval(interval)));
+    stopPages.forEach(stop => stop.addEventListener("mouseleave", loopProjectAbout));
 
     await loadAboutProject(indexAbout);
-    
-    interval = setInterval(async () => {
-        if (indexAbout === dataProjects.length -1) indexAbout = 0;
-        else indexAbout += 1;
-        await loadAboutProject(indexAbout);
-    }, time);
+    loopProjectAbout();
     
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
